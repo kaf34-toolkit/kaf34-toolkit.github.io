@@ -52,13 +52,13 @@ body {
   color: red;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (orientation:portrait) {
   .question-container {
     flex-direction: column;
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (orientation:landscape) {
   .question-container {
     flex-direction: row;
   }

@@ -15,6 +15,7 @@ body {
 
 .question-text {
   margin-left: 10px;
+  margin-right: 4px;
   align-self: flex-start;
 }
 

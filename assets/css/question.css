@@ -1,0 +1,64 @@
+@import "styles.css";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  padding: 0;
+}
+
+.question-container {
+  display: flex;
+  align-items: center;
+}
+
+.question-text {
+  margin-left: 10px;
+  align-self: flex-start;
+}
+
+.question-image img {
+  max-width: 100%;
+  height: auto;
+  align-self: flex-start;
+}
+
+.answer-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.answer-label {
+  margin-top: 0;
+}
+
+.answer-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.answer {
+  margin-bottom: 5px;
+}
+
+.correct-answer {
+  color: green;
+}
+
+.incorrect-answer {
+  color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .question-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .question-container {
+    flex-direction: row;
+  }
+}

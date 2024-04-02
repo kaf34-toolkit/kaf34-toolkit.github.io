@@ -1,0 +1,14 @@
+@import "styles.css";
+
+.container {
+  margin: 10px auto;
+  max-width: 540px;
+  text-align: center;
+}
+
+h1 {
+  margin: 30px 0;
+  font-size: 3em;
+  line-height: 1;
+  letter-spacing: -1px;
+}

@@ -1,0 +1,30 @@
+@import "styles.css";
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 80px;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+}
+
+.filter-input {
+  margin-left: 10px;
+  margin-bottom: 6px;
+}

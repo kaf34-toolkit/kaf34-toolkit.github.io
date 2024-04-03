@@ -55,7 +55,7 @@ const app = createApp({
       questionText: '',
       answers: [],
       loading: true
-    };
+    }
   },
   created() {
     const urlParams = new URLSearchParams(window.location.search)
@@ -79,7 +79,7 @@ const app = createApp({
     })
   },
   template: `
-    <div v-if="loading" class="loading-message">Загрузка...</div>
+    <p v-if="loading">Загрузка...</p>
     <div v-else>
       <Question :imgFile="imgFile" :questionText="questionText" :containsImg="containsImg" :answers="answers" :atype="atype"/>
     </div>

@@ -6,24 +6,27 @@ const app = createApp({
     return {
       searchText: '',
       questions: [],
-      filteredQuestions: []
-    };
+      filteredQuestions: [],
+      loading: true
+    }
   },
   created() {
     fetch(common.getFileUrl('preview.json'))
       .then(response => response.json())
       .then(data => {
-        this.questions = data;
-        this.filteredQuestions = data;
+        this.questions = data
+        this.filteredQuestions = data
+        this.loading = false
       })
       .catch(error => {
         console.error('Error fetching questions:', error)
-      });
+        window.location.href = '/404.html'
+      })
   },
   methods: {
     filterQuestions() {
       if (!this.searchText.trim()) {
-        this.filteredQuestions = this.questions;
+        this.filteredQuestions = this.questions
         return;
       }
       this.filteredQuestions = this.questions.filter(question =>
@@ -32,7 +35,8 @@ const app = createApp({
     }
   },
   template: `
-    <div>
+    <p v-if="loading">Загрузка...</p>
+    <div v-else>
       <input type="text" v-model="searchText" @input="filterQuestions" placeholder="Введите текст для поиска" class="filter-input">
       <table v-if="filteredQuestions.length">
         <thead>

@@ -37,8 +37,11 @@ const app = createApp({
   template: `
     <p v-if="loading">Загрузка...</p>
     <div v-else>
-      <input type="text" v-model="searchText" @input="filterQuestions" placeholder="Введите текст для поиска" class="filter-input">
-      <table v-if="filteredQuestions.length">
+      <div class="filter-input">
+        <input type="text" v-model="searchText" @input="filterQuestions" placeholder="Введите текст для поиска">
+        <p>Вопросов найдено: {{ filteredQuestions.length }}</p>
+      </div>
+      <table>
         <thead>
           <tr>
             <th>Текст вопроса</th>
@@ -52,7 +55,6 @@ const app = createApp({
           </tr>
         </tbody>
       </table>
-      <p v-else>Тут ничего нет</p>
     </div>
   `
 });

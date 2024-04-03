@@ -10,12 +10,6 @@ const Question = {
     atype: Number,
   },
   computed: {
-    displayAnswers() {
-      if (this.atype === 1 && this.answers.length > 0) {
-        return [this.answers.find(answer => answer.is_correct)]
-      }
-      return this.answers
-    },
     answerLabel() {
       return this.atype === 1 ? 'Ответ:' : 'Варианты ответов:'
     },
@@ -35,7 +29,7 @@ const Question = {
         <p class="answer-label"><strong>{{ answerLabel }}</strong></p>
         <p>&nbsp;</p>
         <ul class="answer-list">
-          <li v-for="(answer, index) in displayAnswers" :key="index" :class="{ 'correct-answer': answer.is_correct, 'incorrect-answer': !answer.is_correct }" class="answer" style="margin-bottom: 5px;">{{ answer.text }}</li>
+          <li v-for="(answer, index) in answers" :key="index" :class="{ 'correct-answer': answer.is_correct, 'incorrect-answer': !answer.is_correct }" class="answer" style="margin-bottom: 5px;">{{ answer.text }}</li>
         </ul>
       </div>
     </div>
